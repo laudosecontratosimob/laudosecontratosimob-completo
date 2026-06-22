@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laudos & Contratos Imobiliários — Modelos Profissionais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #141210;
+      --paper: #f4f1eb;
+      --gold: #a8865c;
+      --fog: #9a9189;
+      --white: #fefdfb;
+      --dark-card: #1e1a16;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Outfit', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 5rem;
+      background: rgba(244,241,235,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(168,134,92,0.15);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fog); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.cta { color: var(--white); background: var(--ink); padding: 0.55rem 1.4rem; transition: background 0.2s; }
+    .nav-links a.cta:hover { background: var(--gold); }
+
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 5rem 5rem; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(168,134,92,0.1) 0%, transparent 60%), radial-gradient(ellipse 50% 80% at 20% 80%, rgba(122,74,46,0.07) 0%, transparent 50%); }
+    .hero-lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(168,134,92,0.055) 80px); }
+    .hero-counter { position: absolute; top: 50%; right: 5rem; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: clamp(10rem, 18vw, 20rem); font-weight: 400; color: rgba(168,134,92,0.07); line-height: 1; user-select: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; margin-top: 8rem; }
+    .hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 2rem; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 1rem; line-height: 1.8; color: var(--fog); max-width: 500px; margin-bottom: 3rem; }
+    .hero-btns { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .btn-dark { background: var(--ink); color: var(--paper); padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, transform 0.2s; display: inline-block; }
+    .btn-dark:hover { background: var(--gold); transform: translateY(-2px); }
+    .btn-outline { border: 1px solid rgba(168,134,92,0.4); color: var(--gold); padding: 1rem 2rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; display: inline-block; }
+    .btn-outline:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .hero-stats { position: absolute; bottom: 5rem; right: 5rem; display: flex; flex-direction: column; gap: 1.5rem; z-index: 1; }
+    .stat { text-align: right; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; color: var(--ink); line-height: 1; }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fog); margin-top: 0.2rem; }
+
+    .section-wrap { padding: 7rem 5rem; }
+    .eyebrow { display: flex; align-items: center; gap: 0.75rem; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    #combos { background: var(--dark-card); }
+    #combos .eyebrow { color: var(--gold); }
+    #combos .eyebrow::before { background: var(--gold); }
+    #combos .section-title { color: var(--paper); }
+    #combos .section-title em { color: var(--gold); }
+    .combos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+    .combos-desc { font-size: 0.9rem; line-height: 1.8; color: rgba(244,241,235,0.45); max-width: 400px; align-self: end; }
+    .combos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(168,134,92,0.2); }
+    .combo-card { background: var(--dark-card); padding: 2.5rem 2rem; display: flex; flex-direction: column; transition: background 0.3s; position: relative; overflow: hidden; }
+    .combo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .combo-card:hover { background: #261f18; }
+    .combo-card:hover::before { transform: scaleX(1); }
+    .combo-icon { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .combo-tag { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .combo-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--paper); line-height: 1.3; margin-bottom: 1rem; flex-grow: 1; }
+    .combo-includes { font-size: 0.75rem; color: rgba(244,241,235,0.38); line-height: 1.6; margin-bottom: 1.5rem; }
+    .combo-price { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--paper); margin-bottom: 1.5rem; }
+    .btn-combo { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; border: 1px solid rgba(168,134,92,0.3); color: var(--gold); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.25s; }
+    .btn-combo:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+    #individuais { background: var(--white); }
+    .tabs-header { display: flex; gap: 0; border-bottom: 1px solid rgba(168,134,92,0.2); margin-bottom: 3rem; overflow-x: auto; }
+    .tab-btn { padding: 1rem 2rem; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fog); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.2s; font-family: 'Outfit', sans-serif; }
+    .tab-btn:hover { color: var(--gold); }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .produtos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1px; background: rgba(168,134,92,0.15); }
+    .prod-card { background: var(--white); padding: 2rem 1.8rem; display: flex; flex-direction: column; transition: background 0.25s; }
+    .prod-card:hover { background: var(--paper); }
+    .prod-num { font-family: 'Playfair Display', serif; font-size: 0.72rem; color: rgba(168,134,92,0.45); letter-spacing: 0.2em; margin-bottom: 1.25rem; }
+    .prod-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 0.75rem; flex-grow: 1; }
+    .prod-desc { font-size: 0.8rem; line-height: 1.7; color: var(--fog); margin-bottom: 1.75rem; }
+    .prod-price { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--ink); margin-bottom: 0.2rem; }
+    .prod-note { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fog); margin-bottom: 1.5rem; }
+    .btn-prod { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.25s; }
+    .btn-prod:hover { background: var(--ink); color: var(--paper); }
+    .prod-note .saiba-mais, .combo-price + .prod-note .saiba-mais {
+      color: var(--gold); text-decoration: none; letter-spacing: 0.18em;
+      border-bottom: 1px solid rgba(168,134,92,0.35); padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .prod-note .saiba-mais:hover, .combo-price + .prod-note .saiba-mais:hover {
+      color: var(--ink); border-color: var(--ink);
+    }
+    #combos .prod-note .saiba-mais { color: rgba(244,241,235,0.55); border-color: rgba(244,241,235,0.2); }
+    #combos .prod-note .saiba-mais:hover { color: var(--gold); border-color: var(--gold); }
+
+    #como { background: var(--paper); border-top: 1px solid rgba(168,134,92,0.15); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; border: 1px solid rgba(168,134,92,0.2); }
+    .step { padding: 3rem 2rem; border-right: 1px solid rgba(168,134,92,0.2); }
+    .step:last-child { border-right: none; }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 400; color: rgba(168,134,92,0.18); line-height: 1; margin-bottom: 1.5rem; }
+    .step h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--ink); }
+    .step p { font-size: 0.82rem; line-height: 1.7; color: var(--fog); }
+
+    footer { background: var(--ink); padding: 3rem 5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer .logo { color: var(--paper); }
+    footer p { font-size: 0.72rem; color: rgba(244,241,235,0.35); letter-spacing: 0.05em; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-tag  { animation: fadeUp 0.7s ease both 0.1s; }
+    .hero h1   { animation: fadeUp 0.7s ease both 0.25s; }
+    .hero-sub  { animation: fadeUp 0.7s ease both 0.4s; }
+    .hero-btns { animation: fadeUp 0.7s ease both 0.55s; }
+
+    @media (max-width: 1024px) {
+      nav { padding: 1.2rem 2rem; }
+      .hero { padding: 0 2rem 4rem; }
+      .hero-stats { right: 2rem; bottom: 4rem; }
+      .hero-counter { right: 2rem; font-size: 8rem; }
+      .section-wrap { padding: 5rem 2rem; }
+      .combos-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .combos-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .step:nth-child(2) { border-right: none; }
+      .step:nth-child(3), .step:nth-child(4) { border-top: 1px solid rgba(168,134,92,0.2); }
+      footer { padding: 2rem; flex-direction: column; gap: 1rem; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero-stats { display: none; }
+      .combos-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid rgba(168,134,92,0.2); }
+      .step:last-child { border-bottom: none; }
+      .tabs-header { display: grid; grid-template-columns: repeat(2, 1fr); overflow: visible; }
+      .tab-btn { padding: 0.85rem 0.5rem; font-size: 0.62rem; text-align: center; border-bottom: 2px solid rgba(168,134,92,0.15); }
+      .tab-btn.active { border-bottom-color: var(--gold); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Laudos <em>&</em> Contratos Imobiliários</a>
+  <div class="nav-links">
+    <a href="#combos">Combos</a>
+    <a href="#individuais">Modelos</a>
+    <a href="#como">Como Funciona</a>
+    <a href="#combos" class="cta">Comprar Agora</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-counter">23</div>
+  <div class="hero-content">
+    <div class="hero-tag">Documentação Imobiliária Profissional</div>
+    <h1>Modelos prontos.<br><em>Precisão jurídica.</em><br>Faça o download.</h1>
+    <p class="hero-sub">Modelos de laudos periciais, laudos de vistoria e contratos de locação desenvolvidos com rigor técnico e jurídico para profissionais do mercado imobiliário brasileiro. Modelos normatizados, atualizados, totalmente editáveis em Word e prontos para uso imediato.</p>
+    <div class="hero-btns">
+      <a href="#combos" class="btn-dark">Ver Combos</a>
+      <a href="#individuais" class="btn-outline">Modelos Individuais</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">23</div><div class="stat-label">Modelos disponíveis</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Categorias</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Editável</div></div>
+  </div>
+</section>
+
+<section id="combos" class="section-wrap">
+  <div class="combos-intro">
+    <div>
+      <div class="eyebrow">Melhor custo-benefício</div>
+      <h2 class="section-title">Pacotes <em>completos</em><br>por categoria</h2>
+    </div>
+    <p class="combos-desc">Adquira o pacote completo de uma categoria e economize. Ideal para profissionais que atuam em múltiplas frentes do mercado imobiliário.</p>
+  </div>
+  <div class="combos-grid">
+    <div class="combo-card">
+      <div class="combo-icon">⚖️</div>
+      <div class="combo-tag">Combo - modelos judiciais</div>
+      <div class="combo-title">Laudos de Avaliação Mercadológica Imobiliária - Graus I e II de Fundamentação</div>
+      <div class="combo-includes"> Inclui 5 modelos:<br> · Método Comparativo Direto de Dados de Mercado - Graus I e II de Fundamentação<br> · Método da Renda<br> · Método do Custo<br> · Método Evolutivo<br> · Método Involutivo<br><br>Modelos editáveis em Word e Excel</div>
+      <div class="combo-price">R$ 597,00</div><div class="prod-note"><a href="combo-judicial-grau-1-2.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/pt69igg_913741" class="btn-combo" target="_blank">Adquirir Combo →</a>
+    </div>
+     
+ <div class="combo-card">
+      <div class="combo-icon">⚖️</div>
+      <div class="combo-tag">Combo - modelos judiciais</div>
+      <div class="combo-title">Laudos de Avaliação Mercadológica Imobiliária - Grau III de Fundamentação</div>
+      <div class="combo-includes">Inclui 5 modelos:<br> · Método Comparativo Direto de Dados de Mercado - Grau III de Fundamentação<br> · Método da Renda<br> · Método do Custo<br> · Método Evolutivo<br> · Método Involutivo.<br><br>Modelos editáveis em Word e Excel</div>
+      
+   <div class="combo-price">R$ 617,00</div><div class="prod-note"><a href="combo-judicial-grau-3.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/i2z5a2r_917748" class="btn-combo" target="_blank">Adquirir Combo →</a>
+    </div>
+
+
+    
+    
+    <div class="combo-card">
+      <div class="combo-icon">📋</div>
+      <div class="combo-tag">Combo - modelos extrajudiciais</div>
+      <div class="combo-title">Laudos de Avaliação Mercadológica Imobiliária - Graus I e II de Fundamentação</div>
+      <div class="combo-includes">Inclui 5 modelos:<br> · Método Comparativo Direto de Dados de Mercado - Graus I e II de Fundamentação<br> · Método da Renda<br> · Método do Custo<br> · Método Evolutivo<br> · Método Involutivo.<br><br>Modelos editáveis em Word e Excel</div>
+      <div class="combo-price">R$ 497,00</div><div class="prod-note"><a href="combo-extrajudicial-grau-1-2.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/x76b29j_913768" class="btn-combo" target="_blank">Adquirir Combo →</a>
+    </div>
+   
+    <div class="combo-card">
+      <div class="combo-icon">📋</div>
+      <div class="combo-tag">Combo - modelos extrajudiciais</div>
+      <div class="combo-title">Laudos de Avaliação Mercadológica Imobiliária - Grau III de Fundamentação</div>
+      <div class="combo-includes">Inclui 5 modelos:<br> · Método Comparativo Direto de Dados de Mercado - Grau III de Fundamentação<br> · Método da Renda<br> · Método do Custo<br> · Método Evolutivo<br> · Método Involutivo<br><br>Modelos editáveis em Word e Excel</div>
+      <div class="combo-price">R$ 517,00</div><div class="prod-note"><a href="combo-extrajudicial-grau-3.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/553c3jx_917742" class="btn-combo" target="_blank">Adquirir Combo →</a>
+    </div>
+    
+    <div class="combo-card">
+      <div class="combo-icon">🏠</div>
+      <div class="combo-tag">Combo - modelos de vistoria</div>
+      <div class="combo-title">Laudos de Vistoria Imobiliária</div>
+      <div class="combo-includes">Inclui 2 modelos:<br>  · Vistoria de Entrada<br>  · Vistoria de Saída<br><br>Modelos editáveis em Word</div>
+      <div class="combo-price">R$ 77,00</div><div class="prod-note"><a href="combo-vistoria.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/7ww43tv_913773" class="btn-combo" target="_blank">Adquirir Combo →</a>
+    </div>
+    <div class="combo-card">
+      <div class="combo-icon">📄</div>
+      <div class="combo-tag">Combo - modelos de contrato</div>
+      <div class="combo-title">Contratos de Locação de Imóveis</div>
+      <div class="combo-includes">Inclui 3 modelos:<br>  · Caução<br>  · Fiador<br>  ·  Seguro Fiança<br><br>Modelos editáveis em Word</div>
+      <div class="combo-price">R$ 197,00</div><div class="prod-note"><a href="combo-contratos.html" class="saiba-mais">saiba mais</a></div>
+      <a href="https://pay.cakto.com.br/3cef3jz_913784" class="btn-combo" target="_blank">Adquirir Combo →</a>
+      </div>
+    </div>
+ 
+</section>
+
+<section id="individuais" class="section-wrap">
+  <div class="eyebrow">Modelos Individuais</div>
+  <h2 class="section-title">Escolha <em>exatamente</em><br>o que você precisa</h2>
+
+  <div class="tabs-header" style="margin-top:2.5rem;">
+    <button class="tab-btn active" onclick="showTab('judicial',this)">Laudos Judiciais</button>
+    <button class="tab-btn" onclick="showTab('extrajudicial',this)">Laudos Extrajudiciais</button>
+    <button class="tab-btn" onclick="showTab('vistoria',this)">Laudos de Vistoria</button>
+    <button class="tab-btn" onclick="showTab('contratos',this)">Contratos</button>
+  </div>
+
+  <div id="tab-judicial" class="tab-panel active">
+    <div class="produtos-grid">
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO COMPARATIVO DIRETO DE DADOS DE MERCADO - Graus I e II de Fundamentação</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel. <br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 147,00</div><div class="prod-note"><a href="judicial-comparativo-grau-1-2.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/uv79dtb_913811" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+     <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO COMPARATIVO DIRETO DE DADOS DE MERCADO - Grau III de Fundamentação</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel, com maior grau de fundamentação. <br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 247,00</div><div class="prod-note"><a href="judicial-comparativo-grau-3.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/34x9kte_913872" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO DA RENDA</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 167,00</div><div class="prod-note"><a href="judicial-renda.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/pogi82u_913892" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO DO CUSTO</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 157,00</div><div class="prod-note"><a href="judicial-custo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/3446zxz_913910" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO EVOLUTIVO</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 177,00</div><div class="prod-note"><a href="judicial-evolutivo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/h8vnhfm_913927" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO JUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO INVOLUTIVO</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial Judicial de Avaliação Mercadológica de Imóvel. <br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 197,00</div><div class="prod-note"><a href="judicial-involutivo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/5m686fr_913944" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+          </div>
+  </div>
+
+  <div id="tab-extrajudicial" class="tab-panel">
+    <div class="produtos-grid">
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO COMPARATIVO DIRETO DE DADOS DE MERCADO - Graus I e II de Fundamentação</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial de Avaliação Mercadológica de Imóvel. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 127,00</div><div class="prod-note"><a href="extrajudicial-comparativo-grau-1-2.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/36ubojn_914063" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO COMPARATIVO DIRETO DE DADOS DE MERCADO - Grau III de Fundamentação</div><p class="prod-desc">Contém:<br> · Modelo Editável de Laudo Pericial de Avaliação Mercadológica com maior grau de fundamentação. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 147,00</div><div class="prod-note"><a href="extrajudicial-comparativo-grau-3.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/tbijmox_917680" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO DA RENDA</div><p class="prod-desc">Contém:<br>  · Modelo Editável de Laudo Pericial de Avaliação Mercadológica de Imóvel. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 147,00</div><div class="prod-note"><a href="extrajudicial-renda.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/3dpk8ef_914074" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO DO CUSTO</div><p class="prod-desc">Contém:<br>  · Modelo Editável de Laudo Pericial de Avaliação Mercadológica de Imóvel. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 137,00</div><div class="prod-note"><a href="extrajudicial-custo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/ysiq5qq_916546" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO EVOLUTIVO</div><p class="prod-desc">Contém:<br>  · Modelo Editável de Laudo Pericial de Avaliação Mercadológica de Imóvel. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 157,00</div><div class="prod-note"><a href="extrajudicial-evolutivo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/3e6zuvv_914077" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO EXTRAJUDICIAL</div><div class="prod-title">Laudo de Avaliação Mercadológica Imobiliária – MÉTODO INVOLUTIVO</div><p class="prod-desc">Contém:<br>  · Modelo Editável de Laudo Pericial de Avaliação Mercadológica de Imóvel. Ideal para avaliações e perícias fora do âmbito judicial.<br> · Estrutura técnica normatizada conforme ABNT NBR 14653 para processos judiciais imobiliários.<br><br>Modelo Editável em Word e Excel</p><div class="prod-price">R$ 177,00</div><div class="prod-note"><a href="extrajudicial-involutivo.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/n3pe237_914182" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+          </div>
+  </div>
+
+  <div id="tab-vistoria" class="tab-panel">
+    <div class="produtos-grid">
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO DE VISTORIA</div><div class="prod-title">Laudo de Vistoria de Entrada</div><p class="prod-desc">Contém:<br> · Modelo completo para vistoria de entrada em imóveis locados<br> · Campo para a inserção de fotos. <br> · Registra o estado do imóvel no início da locação, protegendo locador e locatário.<br><br>Modelo Editável em Word</p><div class="prod-price">R$ 47,00</div><div class="prod-note"><a href="vistoria-entrada.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/c2ma5y2_914251" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO DE VISTORIA</div><div class="prod-title">Laudo de Vistoria de Saída</div><p class="prod-desc">Contém:<br> · Modelo completo para vistoria de saída em imóveis locados<br> · Campo para inserção de fotos. <br> · Documenta as condições do imóvel na devolução, base para acerto de contas e eventuais contestações.<br><br>Modelo Editável em Word</p><div class="prod-price">R$ 47,00</div><div class="prod-note"><a href="vistoria-saida.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/32sprig_914253" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+    </div>
+  </div>
+
+  <div id="tab-contratos" class="tab-panel">
+    <div class="produtos-grid">
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO DE CONTRATO</div><div class="prod-title">Contrato de Locação MODELO CAUÇÃO</div><p class="prod-desc">Contém:<br> · Modelo de contrato de locação com garantia por caução em dinheiro. Cláusulas completas, editável e adaptável a diferentes tipos de imóvel.<br><br>Modelo Editável em Word</p><div class="prod-price">R$ 87,00</div><div class="prod-note"><a href="contrato-caucao.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/o7mprf2_914269" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO DE CONTRATO</div><div class="prod-title">Contrato de Locação MODELO FIADOR</div><p class="prod-desc">Contém:<br> · Modelo de contrato de locação com garantia por fiador. Inclui termo de fiança, obrigações do fiador e cláusulas de proteção ao locador.<br><br>Modelo Editável em Word</p><div class="prod-price">R$ 87,00</div><div class="prod-note"><a href="contrato-fiador.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/9d3vub3_914273" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+      <div class="prod-card"><div class="prod-num">AVULSO — MODELO DE CONTRATO</div><div class="prod-title">Contrato de Locação MODELO SEGURO FIANÇA</div><p class="prod-desc">Contém:<br> · Modelo de contrato de locação com garantia por seguro fiança. Estruturado para integração com apólices de seguradoras, conforme Lei do Inquilinato.<br><br>Modelo Editável em Word</p><div class="prod-price">R$ 87,00</div><div class="prod-note"><a href="contrato-seguro-fianca.html" class="saiba-mais">saiba mais</a></div><a href="https://pay.cakto.com.br/md8xvoz_914280" class="btn-prod" target="_blank">Baixar Agora →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="como" class="section-wrap">
+  <div class="eyebrow">Simples e rápido</div>
+  <h2 class="section-title">Como <em>funciona</em></h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h4>Escolha o modelo</h4><p>Selecione o laudo ou contrato que você precisa — individual ou em combo — e clique em "Baixar Agora".</p></div>
+    <div class="step"><div class="step-num">02</div><h4>Efetue o pagamento</h4><p>Pagamento seguro via Cakto. Aceitamos cartão de crédito, Pix, Pic Pay, Google Pay e Apple Pay. Processamento imediato.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>Receba o arquivo</h4><p>Após a confirmação, o link de download é enviado por e-mail imediatamente.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>Preencha e use</h4><p>Abra os arquivos, leia as instruções, preencha os campos editáveis e o documento está pronto para uso profissional.</p></div>
+  </div>
+</section>
+
+<footer style="flex-direction:column;gap:1rem;text-align:center;">
+  <a href="#" class="logo">Laudos <em>&</em> Contratos Imobiliários</a>
+  <p>© 2026 Laudos & Contratos Imobiliários · Processamento seguro via Cakto</p>
+  <p>
+    <a href="privacidade.html" style="color:rgba(244,241,235,0.45);font-size:0.72rem;text-decoration:none;letter-spacing:0.08em;" onmouseover="this.style.color='#a8865c'" onmouseout="this.style.color='rgba(244,241,235,0.45)'">Política de Privacidade</a>
+    <span style="color:rgba(244,241,235,0.2);margin:0 0.75rem;">·</span>
+    <a href="termos.html" style="color:rgba(244,241,235,0.45);font-size:0.72rem;text-decoration:none;letter-spacing:0.08em;" onmouseover="this.style.color='#a8865c'" onmouseout="this.style.color='rgba(244,241,235,0.45)'">Termos de Serviço</a>
+  </p>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
